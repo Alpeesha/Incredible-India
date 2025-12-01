@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Voyages — Incredible India</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      background: #f8f9fa;
+    }
+
+    /* Animated Background */
+    .background-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -3;
+      background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
+      overflow: hidden;
+    }
+
+    /* Floating Elements */
+    .floating-elements {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      overflow: hidden;
+    }
+
+    .floating-element {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      animation: float 15s infinite linear;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) rotate(0deg); }
+      100% { transform: translateY(-100px) rotate(360deg); }
+    }
+
+    /* Header Styles */
+    header {
+      background: linear-gradient(135deg, rgba(26, 41, 128, 0.95), rgba(38, 208, 206, 0.95));
+      color: white;
+      padding: 20px 0;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: 700;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo i {
+      font-size: 36px;
+      color: #ffd700;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 35px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s;
+      position: relative;
+      padding: 8px 0;
+    }
+
+    .nav-links a:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #ffd700;
+      transition: width 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ffd700;
+    }
+
+    .nav-links a:hover:after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                  url('https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: white;
+      text-align: center;
+      padding: 180px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 4.5rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+      animation: fadeInUp 1s ease-out;
+      background: linear-gradient(135deg, #ffd700, #ff7a59, #26d0ce);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+      animation: fadeInUp 1s ease-out 0.2s both;
+      color: #f0f8ff;
+    }
+
+    .hero-description {
+      font-size: 1.3rem;
+      margin-bottom: 50px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeInUp 1s ease-out 0.4s both;
+      line-height: 1.7;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 60px;
+      animation: fadeInUp 1s ease-out 0.6s both;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #ffd700;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Main Content */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+
+    .section-title h2 {
+      font-size: 3rem;
+      color: #1a2980;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title h2:after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 5px;
+      background: linear-gradient(135deg, #26d0ce, #1a2980);
+      border-radius: 3px;
+    }
+
+    .section-title p {
+      font-size: 1.3rem;
+      color: #666;
+      max-width: 800px;
+      margin: 25px auto 0;
+      line-height: 1.6;
+    }
+
+    /* Categories Grid - Hover Image Effect */
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 35px;
+      margin-bottom: 100px;
+    }
+
+    .category-card {
+      background: white;
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      cursor: pointer;
+      height: 380px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Hover Effect - Card lifts */
+    .category-card:hover {
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    }
+
+    /* Main content area */
+    .category-content {
+      padding: 30px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 3;
+      background: white;
+      transition: all 0.5s ease;
+    }
+
+    /* Image container that will appear on hover */
+    .category-image-hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 0.7s ease;
+      z-index: 1;
+      border-radius: 25px;
+    }
+
+    /* When card is hovered, show the image */
+    .category-card:hover .category-image-hover {
+      opacity: 1;
+    }
+
+    /* When card is hovered, make content background transparent */
+    .category-card:hover .category-content {
+      background-color: transparent;
+    }
+
+    /* Adjust text colors on hover for better visibility */
+    .category-name {
+      font-size: 1.8rem;
+      color: #1a2980;
+      margin-bottom: 15px;
+      font-weight: 600;
+      transition: color 0.5s ease;
+    }
+
+    .category-card:hover .category-name {
+      color: white;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .category-description {
+      color: #666;
+      margin-bottom: 20px;
+      line-height: 1.6;
+      flex: 1;
+      transition: color 0.5s ease;
+    }
+
+    .category-card:hover .category-description {
+      color: white;
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .category-features {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+
+    .feature-tag {
+      background: #f0f8ff;
+      color: #1a2980;
+      padding: 6px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.5s ease;
+    }
+
+    .category-card:hover .feature-tag {
+      background: rgba(255, 255, 255, 0.9);
+      color: #1a2980;
+    }
+
+    /* Explore button adjustments */
+    .explore-btn {
+      background: linear-gradient(135deg, #1a2980, #26d0ce);
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.5s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+      align-self: flex-start;
+      font-size: 1rem;
+      position: relative;
+      z-index: 3;
+    }
+
+    .explore-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(26, 41, 128, 0.3);
+    }
+
+    .explore-btn i {
+      transition: transform 0.3s;
+    }
+
+    .explore-btn:hover i {
+      transform: translateX(5px);
+    }
+
+    .category-card:hover .explore-btn {
+      background: white;
+      color: #1a2980;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.5);
+    }
+
+    /* Counter badge adjustments */
+    .category-counter {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(26, 41, 128, 0.9);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 0.9rem;
+      z-index: 4;
+      transition: all 0.5s ease;
+    }
+
+    .category-card:hover .category-counter {
+      background: rgba(255, 255, 255, 0.9);
+      color: #1a2980;
+    }
+
+    /* VR Features Section */
+    .vr-features {
+      background: linear-gradient(135deg, #1a2980, #26d0ce);
+      color: white;
+      padding: 100px 20px;
+      border-radius: 30px;
+      margin-bottom: 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .vr-features:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      background-size: cover;
+      opacity: 0.1;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .feature-card {
+      text-align: center;
+      padding: 50px 30px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 20px;
+      transition: all 0.4s;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      background: rgba(255,255,255,0.15);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+
+    .feature-icon {
+      font-size: 3.5rem;
+      margin-bottom: 25px;
+      display: inline-block;
+      transition: transform 0.3s;
+      color: #ffd700;
+    }
+
+    .feature-card:hover .feature-icon {
+      transform: scale(1.2) rotate(5deg);
+    }
+
+    .feature-card h4 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: white;
+    }
+
+    .feature-card p {
+      color: rgba(255,255,255,0.8);
+      line-height: 1.6;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      margin-bottom: 100px;
+    }
+
+    .testimonial-slider {
+      display: flex;
+      gap: 30px;
+      overflow-x: auto;
+      padding: 20px 10px;
+      scrollbar-width: thin;
+    }
+
+    .testimonial-slider::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .testimonial-slider::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 4px;
+    }
+
+    .testimonial-slider::-webkit-scrollbar-thumb {
+      background: #1a2980;
+      border-radius: 4px;
+    }
+
+    .testimonial-card {
+      flex: 0 0 350px;
+      background: white;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .testimonial-text {
+      color: #555;
+      font-style: italic;
+      line-height: 1.7;
+      margin-bottom: 25px;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .testimonial-text:before {
+      content: '"';
+      position: absolute;
+      left: 0;
+      top: -10px;
+      font-size: 3rem;
+      color: #26d0ce;
+      opacity: 0.3;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1a2980, #26d0ce);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+    }
+
+    .author-info h4 {
+      color: #1a2980;
+      margin-bottom: 5px;
+    }
+
+    .author-info p {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    /* Newsletter */
+    .newsletter {
+      background: linear-gradient(135deg, #1a2980, #26d0ce);
+      padding: 80px 20px;
+      border-radius: 30px;
+      text-align: center;
+      color: white;
+      margin-bottom: 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .newsletter:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      background-size: cover;
+      opacity: 0.1;
+    }
+
+    .newsletter-content {
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .newsletter h3 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .newsletter p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      opacity: 0.9;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 15px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      padding: 18px 25px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      background: rgba(255,255,255,0.9);
+      color: #333;
+      transition: all 0.3s;
+    }
+
+    .newsletter-input:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
+    }
+
+    .newsletter-button {
+      background: #ffd700;
+      color: #1a2980;
+      border: none;
+      padding: 18px 35px;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .newsletter-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #1a2980, #0a1931);
+      color: white;
+      padding: 80px 20px 30px;
+      margin-top: 100px;
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 50px;
+      margin-bottom: 50px;
+    }
+
+    .footer-section h3 {
+      color: #ffd700;
+      margin-bottom: 25px;
+      font-size: 1.4rem;
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    .footer-section h3:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: #26d0ce;
+    }
+
+    .footer-section p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+      color: #ccc;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: #ccc;
+      text-decoration: none;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-links a:hover {
+      color: #ffd700;
+      transform: translateX(5px);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .social-links a:hover {
+      background: #ffd700;
+      color: #1a2980;
+      transform: translateY(-5px);
+    }
+
+    .footer-bottom {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      color: #999;
+      font-size: 0.9rem;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #1a2980, #26d0ce);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      opacity: 0;
+      visibility: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      z-index: 99;
+      border: none;
+    }
+
+    .back-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(26, 41, 128, 0.4);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1100px) {
+      .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .nav-links {
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 3rem;
+      }
+      
+      .categories-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+      
+      .section-title h2 {
+        font-size: 2.5rem;
+      }
+      
+      .newsletter-form {
+        flex-direction: column;
+      }
+      
+      .newsletter-input,
+      .newsletter-button {
+        width: 100%;
+      }
+      
+      .hero-stats {
+        flex-direction: column;
+        gap: 30px;
+      }
+      
+      .testimonial-slider {
+        padding-bottom: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero {
+        padding: 120px 20px;
+      }
+      
+      .feature-card {
+        padding: 30px 20px;
+      }
+      
+      .category-card {
+        height: auto;
+      }
+      
+      .category-content {
+        padding: 20px;
+      }
+    }
+
+    /* Loading Animation */
+    .loading {
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+    }
+
+    .loading:after {
+      content: " ";
+      display: block;
+      width: 64px;
+      height: 64px;
+      margin: 8px;
+      border-radius: 50%;
+      border: 6px solid #1a2980;
+      border-color: #1a2980 transparent #1a2980 transparent;
+      animation: loading 1.2s linear infinite;
+    }
+
+    @keyframes loading {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Animated Background -->
+  <div class="background-container"></div>
+  <div class="floating-elements" id="floatingElements"></div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <i class="fas fa-vr-cardboard"></i>
+        Incredible India
+      </div>
+      <nav class="nav-links">
+        <a href="#"><i class="fas fa-home"></i> Home</a>
+        <a href="#destinations"><i class="fas fa-map-marked-alt"></i> Destinations</a>
+        <a href="#features"><i class="fas fa-vr-cardboard"></i> Travel Information</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Virtual Voyages</h1>
+      <div class="hero-subtitle">Explore Incredible India through Immersive VR Experiences</div>
+      <p class="hero-description">
+        Embark on breathtaking virtual journeys across India's diverse landscapes, from snow-capped Himalayas to golden desert sands, ancient temples to modern metropolises. Experience the magic of India like never before.
+      </p>
+      
+      
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="container" id="destinations">
+    <div class="section-title">
+      <h2>Explore India in Virtual Reality</h2>
+      <p style="color: white;">Choose from our carefully curated categories to experience India's diverse beauty through immersive 360° virtual tours</p>
+    </div>
+
+    <div class="categories-grid" id="categoriesGrid">
+      <!-- Categories will be loaded here by JavaScript -->
+    </div>
+  </section>
+
+  <!-- VR Features -->
+  <section class="vr-features" id="features">
+    <div class="container">
+      <div class="section-title">
+        <h2 style="color: white;">Essential Travel Information</h2>
+        <p style="color: rgba(255,255,255,0.9)">Everything you need to know for planning your perfect Indian adventure</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-compass"></i>
+          </div>
+          <h4>Comprehensive Guides</h4>
+          <p>Detailed travel guides covering attractions, accommodations, local cuisine, transportation, and cultural etiquette for each destination</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <h4>Seasonal Planning</h4>
+          <p>Best times to visit each region, festival calendars, weather information, and seasonal activity recommendations</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-utensils"></i>
+          </div>
+          <h4>Food & Cuisine</h4>
+          <p>Explore India's diverse culinary landscape with recommendations for local dishes, restaurants, and food experiences</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-hands-helping"></i>
+          </div>
+          <h4>Cultural Insights</h4>
+          <p>Understand local customs, traditions, festivals, and etiquette to ensure a respectful and enriching travel experience</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+ 
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Incredible India</h3>
+        <p>Creating unforgettable virtual travel experiences that bring the world's wonders to you.</p>
+        <div class="social-links">
+          <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="#destinations"><i class="fas fa-map-marked-alt"></i> All Destinations</a></li>
+          <li><a href="#features"><i class="fas fa-vr-cardboard"></i> Virtual Tours</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fas fa-envelope"></i> info@incredibleindia.com</a></li>
+          <li><a href="#"><i class="fas fa-phone"></i> +91 12345 67890</a></li>
+          <li><a href="#"><i class="fas fa-map-marker-alt"></i> Virtual Voyages HQ, India</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>VR Requirements</h3>
+        <p>Compatible with Oculus, HTC Vive, and most VR headsets. Also accessible on desktop and mobile browsers.</p>
+        
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p style="color: white;">&copy; 2023 Virtual Voyages - Incredible India. All rights reserved. | Designed with <i class="fas fa-heart" style="color: #ffd700;"></i> for travelers</p>
+    </div>
+  </footer>
+
+  <script>
+    // Create floating background elements
+    function createFloatingElements() {
+      const container = document.getElementById('floatingElements');
+      const colors = ['rgba(255, 215, 0, 0.1)', 'rgba(38, 208, 206, 0.1)', 'rgba(26, 41, 128, 0.1)'];
+      
+      for (let i = 0; i < 20; i++) {
+        const element = document.createElement('div');
+        element.className = 'floating-element';
+        element.style.width = Math.random() * 120 + 30 + 'px';
+        element.style.height = element.style.width;
+        element.style.left = Math.random() * 100 + '%';
+        element.style.background = colors[Math.floor(Math.random() * colors.length)];
+        element.style.animationDuration = (Math.random() * 20 + 10) + 's';
+        element.style.animationDelay = Math.random() * 5 + 's';
+        container.appendChild(element);
+      }
+    }
+
+    // Categories data with detailed information
+    const categories = [
+      {
+        id: 'himalayan',
+        name: 'Himalayas & Hill Stations',
+        description: 'Experience stunning 360° views of majestic Himalayan ranges, snow-capped peaks, serene valleys, and picturesque hill stations.',
+        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop',
+        link: 'HillStation.html',
+        destinations: 7,
+        features: [' Mountain Views', 'Virtual Cable Car Rides', 'Valley Exploration']
+      },
+      {
+        id: 'spiritual',
+        name: 'Spiritual & Cultural Cities',
+        description: 'Immerse yourself in India\'s rich spiritual heritage through VR experiences of ancient temples and sacred rituals.',
+        image: 'https://images.unsplash.com/photo-1549024676-eabbf58fe7ea?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        link: 'Heritage.html',
+        destinations: 8,
+        features: [' Temple Tours', 'Virtual Rituals', 'Spiritual Music']
+      },
+      {
+        id: 'deserts',
+        name: 'Deserts & Heritage Rajasthan',
+        description: 'A land of golden dunes, royal forts, and timeless desert culture experienced through immersive VR.',
+        image: 'https://plus.unsplash.com/premium_photo-1661962556769-5beec5563911?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        link: 'deserts.html',
+        destinations: 6,
+        features: [' Desert Views', 'Royal Fort Tours', 'Virtual Camel Safaris']
+      },
+      {
+        id: 'beaches',
+        name: 'Beaches & Coastal Beauty',
+        description: 'Discover India\'s stunning coastline with golden sands, turquoise waters, and vibrant beach culture in VR.',
+        image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop',
+        link: 'beaches.html',
+        destinations: 7,
+        features: [' Beach Views', 'Virtual Snorkeling', 'Sunset Experiences']
+      },
+      {
+        id: 'heritage',
+        name: 'Heritage & Historical Sites',
+        description: 'Journey through India\'s magnificent historical sites with stunning architectural symmetry in 360° VR.',
+        image: 'https://plus.unsplash.com/premium_photo-1664475023804-22236fbc8a69?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        link: 'historical.html',
+        destinations: 7,
+        features: ['Ancient Architecture', 'Historical Narrations', 'Virtual Time Travel']
+      },
+      {
+        id: 'modern',
+        name: 'Modern City Experiences',
+        description: 'Experience the dynamic pulse of contemporary India through its bustling metropolitan cities in VR.',
+        image: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&h=600&fit=crop',
+        link: 'cities.html',
+        destinations: 7,
+        features: ['City Skyline Views', 'Urban Exploration', 'Nightlife Experiences']
+      }
+    ];
+
+    // Initialize the grid with enhanced cards
+    function initializeGrid() {
+      const grid = document.getElementById('categoriesGrid');
+      grid.innerHTML = '';
+      
+      categories.forEach(category => {
+        const card = document.createElement('div');
+        card.className = 'category-card';
+        card.setAttribute('data-category', category.id);
+        
+        card.innerHTML = `
+          <!-- This div will show the image on hover -->
+          <div class="category-image-hover" style="background-image: url('${category.image}')"></div>
+          
+          <div class="category-content">
+            <div class="category-counter">${category.destinations} Destinations</div>
+            
+            <div class="category-name">${category.name}</div>
+            <p class="category-description">${category.description}</p>
+            
+            <div class="category-features">
+              ${category.features.map(feature => `<span class="feature-tag">${feature}</span>`).join('')}
+            </div>
+            
+            <button class="explore-btn" data-link="${category.link}">
+              Explore Now <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        `;
+        
+        // Add click event to the explore button
+        const exploreBtn = card.querySelector('.explore-btn');
+        exploreBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          window.location.href = this.getAttribute('data-link');
+        });
+        
+        // Add click event to the entire card
+        card.addEventListener('click', function() {
+          window.location.href = category.link;
+        });
+        
+        grid.appendChild(card);
+      });
+    }
+
+    // Back to Top Functionality
+    function initBackToTop() {
+      const backToTopBtn = document.getElementById('backToTop');
+      
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+          backToTopBtn.classList.add('active');
+        } else {
+          backToTopBtn.classList.remove('active');
+        }
+      });
+      
+      backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+
+    // Newsletter Form
+    function initNewsletterForm() {
+      const form = document.getElementById('newsletterForm');
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = this.querySelector('.newsletter-input').value;
+        
+        // Show success message
+        alert(`Thank you for subscribing with ${email}! You'll receive updates on new virtual tours.`);
+        this.reset();
+      });
+    }
+
+    // Testimonial slider auto-scroll
+    function initTestimonialSlider() {
+      const slider = document.querySelector('.testimonial-slider');
+      let scrollAmount = 0;
+      
+      function autoScroll() {
+        if (scrollAmount >= slider.scrollWidth - slider.clientWidth) {
+          scrollAmount = 0;
+        } else {
+          scrollAmount += 350;
+        }
+        slider.scrollTo({
+          left: scrollAmount,
+          behavior: 'smooth'
+        });
+      }
+      
+      // Auto-scroll every 5 seconds
+      setInterval(autoScroll, 5000);
+    }
+
+    // Add scroll animations
+    function initScrollAnimations() {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+      
+      // Observe elements for animation
+      const elementsToAnimate = document.querySelectorAll('.category-card, .feature-card, .testimonial-card');
+      elementsToAnimate.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        observer.observe(el);
+      });
+    }
+
+    // Initialize everything when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      createFloatingElements();
+      initializeGrid();
+      initBackToTop();
+      initNewsletterForm();
+      initTestimonialSlider();
+      initScrollAnimations();
+      
+      // Add smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

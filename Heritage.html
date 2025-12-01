@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spiritual & Cultural Cities - Incredible India</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    :root {
+      --primary: #8b4513;
+      --secondary: #a0522d;
+      --accent: #d2691e;
+      --light: #fff8dc;
+      --dark: #654321;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Animated Background */
+    .animated-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+      opacity: 0.1;
+    }
+
+    .floating-elements {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .floating-element {
+      position: absolute;
+      background: rgba(139, 69, 19, 0.1);
+      border-radius: 50%;
+      animation: float 15s infinite linear;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) rotate(0deg); }
+      100% { transform: translateY(-100px) rotate(360deg); }
+    }
+
+    /* Header Styles */
+    header {
+      background: rgba(139, 69, 19, 0.95);
+      color: white;
+      padding: 20px 0;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--light);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .nav-links a:after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--light);
+      transition: width 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--light);
+    }
+
+    .nav-links a:hover:after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                  url('https://images.unsplash.com/photo-1549024676-eabbf58fe7ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: white;
+      text-align: center;
+      padding: 150px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .hero-subtitle {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+      animation: fadeInUp 1s ease-out 0.2s both;
+    }
+
+    .hero-description {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeInUp 1s ease-out 0.4s both;
+    }
+
+    .cta-button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 18px 35px;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      animation: fadeInUp 1s ease-out 0.6s both;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 auto;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+    }
+
+    .cta-button i {
+      transition: transform 0.3s;
+    }
+
+    .cta-button:hover i {
+      transform: translateX(5px);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Main Content */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: 2.8rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title h2:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    .section-title p {
+      font-size: 1.3rem;
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Destinations Grid */
+    .destinations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin-bottom: 80px;
+    }
+
+    .destination-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: all 0.4s;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .destination-card:hover {
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .destination-image {
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.5s;
+    }
+
+    .destination-card:hover .destination-image {
+      transform: scale(1.1);
+    }
+
+    .destination-content {
+      padding: 25px;
+      position: relative;
+    }
+
+    .destination-region {
+      font-size: 1.1rem;
+      color: var(--secondary);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .destination-name {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    .destination-description {
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .destination-features {
+      list-style: none;
+    }
+
+    .destination-features li {
+      padding: 8px 0;
+      color: #555;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .destination-features li i {
+      color: var(--accent);
+    }
+
+    .explore-btn {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .explore-btn:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* VR Features Section */
+    .vr-features {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 100px 20px;
+      border-radius: 30px;
+      margin-bottom: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .vr-features:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1549024676-eabbf58fe7ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+      background-size: cover;
+      opacity: 0.1;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .feature-card {
+      text-align: center;
+      padding: 40px 25px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 20px;
+      transition: all 0.4s;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      background: rgba(255,255,255,0.15);
+    }
+
+    .feature-icon {
+      font-size: 3.5rem;
+      margin-bottom: 25px;
+      display: inline-block;
+      transition: transform 0.3s;
+    }
+
+    .feature-card:hover .feature-icon {
+      transform: scale(1.2);
+    }
+
+    .feature-card h4 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    /* SPIRITUAL DESTINATIONS WHEEL */
+    .wheel-section {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      margin-bottom: 80px;
+    }
+
+    .wheel-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      margin-top: 40px;
+      width: 100%;
+    }
+
+    .wheel-wrapper {
+      position: relative;
+      width: 500px;
+      height: 500px;
+      margin: 0 auto;
+    }
+
+    .wheel {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: visible;
+    }
+
+    .wheel-center {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background-color: var(--light);
+      border-radius: 50%;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .wheel-center:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .virtual-tour-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .virtual-tour-btn:hover {
+      background: var(--dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .destination-point {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: var(--light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: all 0.4s ease;
+      z-index: 5;
+      transform-origin: center;
+    }
+
+    .destination-point:hover {
+      transform: scale(1.15);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+      z-index: 20;
+    }
+
+    .destination-point.active {
+      transform: scale(1.2);
+      background-color: var(--primary);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      z-index: 15;
+    }
+
+    .destination-point i {
+      font-size: 1.8rem;
+      color: var(--dark);
+      transition: all 0.3s ease;
+    }
+
+    .destination-point.active i {
+      color: white;
+    }
+
+    .destination-point:hover i {
+      transform: scale(1.1);
+    }
+
+    .brown-line {
+      position: absolute;
+      width: 90%;
+      height: 90%;
+      border: 3px solid var(--primary);
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .wheel-info-panel {
+      flex: 1;
+      min-width: 300px;
+      max-width: 500px;
+      background-color: white;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: all 0.5s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .wheel-info-panel.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .wheel-info-panel h2 {
+      color: var(--primary);
+      font-size: 2rem;
+      margin-bottom: 15px;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 10px;
+    }
+
+    .wheel-info-panel p {
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .wheel-features {
+      list-style-type: none;
+      margin-bottom: 25px;
+    }
+
+    .wheel-features li {
+      padding: 8px 0;
+      padding-left: 30px;
+      position: relative;
+      color: var(--dark);
+    }
+
+    .wheel-features li:before {
+      content: "•";
+      color: var(--primary);
+      font-size: 1.5rem;
+      position: absolute;
+      left: 0;
+      top: 3px;
+    }
+
+    .wheel-explore-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .wheel-explore-btn:hover {
+      background: var(--dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    @media (max-width: 900px) {
+      .wheel-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .wheel-wrapper {
+        width: 400px;
+        height: 400px;
+      }
+      
+      .destination-point {
+        width: 70px;
+        height: 70px;
+      }
+      
+      .wheel-center {
+        width: 120px;
+        height: 120px;
+      }
+    }
+    
+    @media (max-width: 500px) {
+      .wheel-wrapper {
+        width: 320px;
+        height: 320px;
+      }
+      
+      .destination-point {
+        width: 60px;
+        height: 60px;
+      }
+      
+      .destination-point i {
+        font-size: 1.5rem;
+      }
+      
+      .wheel-center {
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    /* Gallery Section */
+    .gallery-preview {
+      margin-bottom: 80px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .gallery-item {
+      height: 220px;
+      border-radius: 15px;
+      background-size: cover;
+      background-position: center;
+      transition: all 0.4s;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-item:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.3);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-item:hover:before {
+      opacity: 1;
+    }
+
+    .gallery-item i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      color: white;
+      font-size: 2rem;
+      transition: transform 0.3s;
+    }
+
+    .gallery-item:hover i {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    /* CTA Section */
+    .cta-section {
+      text-align: center;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      padding: 100px 20px;
+      border-radius: 30px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1549024676-eabbf58fe7ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+      background-size: cover;
+      opacity: 0.1;
+    }
+
+    .cta-section h3 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-section p {
+      font-size: 1.3rem;
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .secondary-button {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .secondary-button:hover {
+      background: white;
+      color: var(--primary);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: white;
+      padding: 80px 20px 30px;
+      margin-top: 100px;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-section h3 {
+      color: var(--light);
+      margin-bottom: 25px;
+      font-size: 1.4rem;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-links a:hover {
+      color: var(--light);
+      transform: translateX(5px);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .social-links a:hover {
+      background: var(--light);
+      color: var(--primary);
+      transform: translateY(-5px);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      color: #999;
+      font-size: 0.9rem;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--accent);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      opacity: 0;
+      visibility: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      z-index: 99;
+    }
+
+    .back-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+      
+      .button-group {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .cta-button, .secondary-button {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .destination-card:hover {
+        transform: translateY(-5px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Animated Background -->
+  <div class="animated-bg"></div>
+  <div class="floating-elements" id="floatingElements"></div>
+
+  <!-- Back to Top Button -->
+  <div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <i class="fas fa-om"></i>
+        Incredible India
+      </div>
+      <nav class="nav-links">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="#Destinations"><i class="fas fa-map-marked-alt"></i> Destinations</a>
+        <a href="#Virtual"><i class="fas fa-vr-cardboard"></i> Virtual Tours</a>
+        <a href="#Contact"><i class="fas fa-envelope"></i> Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Spiritual & Cultural Cities</h1>
+      <div class="hero-subtitle">8 Sacred Destinations</div>
+      <p class="hero-description">
+        Immerse yourself in India's rich spiritual heritage through VR experiences that bring ancient temples, sacred rituals, and profound cultural traditions to life.
+      </p>
+      <a href="https://www.makemytrip.com/tripideas/heritage-destinations?pdtCtx=eyJqaWQiOiJqb3VybmV5XzE3NjQ0OTczMDEwMDNfcjB5bGtpc29tIiwic2MiOm51bGwsInBwIjoibGFuZGluZyJ9">
+      <button class="cta-button">
+        Start Your Tour Now<i class="fas fa-vr-cardboard"></i>
+      </button>
+      </a>
+    </div>
+  </section>
+
+  <!-- Featured Destinations -->
+  <section class="container" id="Destinations">
+    <div class="section-title">
+      <h2>Featured Destinations</h2>
+      <p>Explore India's most sacred spiritual destinations and cultural heritage sites</p>
+    </div>
+
+    <div class="destinations-grid">
+      <!-- Varanasi -->
+      <div class="destination-card">
+        <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1665413791165-b25d42542b80?q=80&w=1077&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+        <div class="destination-content">
+          <div class="destination-region">Varanasi</div>
+          <div class="destination-name">Ganga Ghats</div>
+          <p class="destination-description">The spiritual capital of India, known for its sacred Ganga river ghats, ancient temples, and spiritual rituals.</p>
+          <ul class="destination-features">
+            <li><i class="fas fa-check"></i> Sacred Ganga Aarti</li>
+            <li><i class="fas fa-check"></i> Ancient temples</li>
+            <li><i class="fas fa-check"></i> Spiritual ceremonies</li>
+          </ul>
+          <a href="https://varanasi.nic.in/tourism/">
+          <button class="explore-btn">Explore <i class="fas fa-external-link-alt"></i></button>
+        </a>
+        </div>
+      </div>
+
+      <!-- Rishikesh -->
+      <div class="destination-card">
+        <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1651056088419-17d8e3d76fe3?q=80&w=890&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+        <div class="destination-content">
+          <div class="destination-region">Rishikesh</div>
+          <div class="destination-name">Lakshman Jhula</div>
+          <p class="destination-description">The yoga capital of the world, famous for its suspension bridges, ashrams, and spiritual retreats.</p>
+          <ul class="destination-features">
+            <li><i class="fas fa-check"></i> Yoga and meditation</li>
+            <li><i class="fas fa-check"></i> Suspension bridges</li>
+            <li><i class="fas fa-check"></i> Ashrams and retreats</li>
+          </ul>
+          <a href="https://uttarakhandtourism.gov.in/destination/rishikesh">
+          <button class="explore-btn">Explore <i class="fas fa-external-link-alt"></i></button>
+        </a>
+        </div>
+      </div>
+
+      <!-- Haridwar -->
+      <div class="destination-card">
+        <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1653392083932-d5e9e7d2ccd1?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+        <div class="destination-content">
+          <div class="destination-region">Haridwar</div>
+          <div class="destination-name">Har Ki Pauri</div>
+          <p class="destination-description">One of the seven holiest places in Hinduism, known for the Ganga Aarti and Kumbh Mela festival.</p>
+          <ul class="destination-features">
+            <li><i class="fas fa-check"></i> Ganga Aarti ceremony</li>
+            <li><i class="fas fa-check"></i> Kumbh Mela site</li>
+            <li><i class="fas fa-check"></i> Ancient temples</li>
+          </ul>
+          <a href="https://uttarakhandtourism.gov.in/destination/haridwar">
+          <button class="explore-btn">Explore <i class="fas fa-external-link-alt"></i></button>
+        </a>
+        </div>
+      </div>
+
+      <!-- Amritsar -->
+      <div class="destination-card">
+        <div class="destination-image" style="background-image: url('https://plus.unsplash.com/premium_photo-1697730396642-7a338ffc2852?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+        <div class="destination-content">
+          <div class="destination-region">Amritsar</div>
+          <div class="destination-name">Golden Temple</div>
+          <p class="destination-description">The holiest Gurdwara of Sikhism, known for its stunning golden architecture and community kitchen.</p>
+          <ul class="destination-features">
+            <li><i class="fas fa-check"></i> Golden architecture</li>
+            <li><i class="fas fa-check"></i> Langar (community kitchen)</li>
+            <li><i class="fas fa-check"></i> Spiritual harmony</li>
+          </ul>
+          <a href="https://www.goldentempleamritsar.org/">
+          <button class="explore-btn">Explore <i class="fas fa-external-link-alt"></i></button>
+        </a>
+        </div>
+      </div>
+
+      <!-- Mathura -->
+      <div class="destination-card">
+        <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1666676633179-8b934635fb5f?q=80&w=436&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+        <div class="destination-content">
+          <div class="destination-region">Mathura</div>
+          <div class="destination-name">Vrindavan Temples</div>
+          <p class="destination-description">The birthplace of Lord Krishna, filled with ancient temples and spiritual significance.</p>
+          <ul class="destination-features">
+            <li><i class="fas fa-check"></i> Krishna Janmashtami</li>
+            <li><i class="fas fa-check"></i> Ancient temples</li>
+            <li><i class="fas fa-check"></i> Spiritual festivals</li>
+          </ul>
+          <a href="https://krishna.com/vrindavan/">
+          <button class="explore-btn">Explore <i class="fas fa-external-link-alt"></i></button>
+        </a>
+        </div>
+      </div>
+
+      <!-- Ajmer -->
+      <div class="destination-card">
+        <div class="destination-image" style="background-image: url('https://touresham.com/wp-content/uploads/2023/11/Dargah-Sharif-Ajmer.jpg')"></div>
+        <div class="destination-content">
+          <div class="destination-region">Ajmer</div>
+          <div class="destination-name">Dargah Sharif</div>
+          <p class="destination-description">One of the most important Sufi shrines in the world, attracting pilgrims of all faiths.</p>
+          <ul class="destination-features">
+            <li><i class="fas fa-check"></i> Sufi shrine</li>
+            <li><i class="fas fa-check"></i> Interfaith harmony</li>
+            <li><i class="fas fa-check"></i> Qawwali music</li>
+          </ul>
+          <a href="https://www.tourism.rajasthan.gov.in/ajmer.html?utm_source=chatgpt.com">
+          <button class="explore-btn">Explore <i class="fas fa-external-link-alt"></i></button>
+        </a>
+        </div>
+      </div>
+
+      <!-- Ujjain -->
+      <div class="destination-card">
+        <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1658730487395-dcc99f5d997c?q=80&w=327&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+        <div class="destination-content">
+          <div class="destination-region">Ujjain</div>
+          <div class="destination-name">Mahakaleshwar</div>
+          <p class="destination-description">One of the twelve Jyotirlingas, this ancient temple is a major pilgrimage site for Shiva devotees.</p>
+          <ul class="destination-features">
+            <li><i class="fas fa-check"></i> Jyotirlinga temple</li>
+            <li><i class="fas fa-check"></i> Bhasma Aarti</li>
+            <li><i class="fas fa-check"></i> Kumbh Mela site</li>
+          </ul>
+          <a href="https://mahakaleshwar.net/?utm_source=chatgpt.com">
+          <button class="explore-btn">Explore <i class="fas fa-external-link-alt"></i></button>
+        </a>
+        </div>
+      </div>
+
+      <!-- Mahabalipuram -->
+      <div class="destination-card">
+        <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1717522692051-78f400c96270?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+        <div class="destination-content">
+          <div class="destination-region">Mahabalipuram</div>
+          <div class="destination-name">Shore Temple</div>
+          <p class="destination-description">A UNESCO World Heritage site with ancient rock-cut temples by the Bay of Bengal.</p>
+          <ul class="destination-features">
+            <li><i class="fas fa-check"></i> UNESCO Heritage site</li>
+            <li><i class="fas fa-check"></i> Rock-cut architecture</li>
+            <li><i class="fas fa-check"></i> Coastal temple complex</li>
+          </ul>
+          <a href="https://www.mahabalipuram.org/?utm_source=chatgpt.com">
+          <button class="explore-btn">Explore <i class="fas fa-external-link-alt"></i></button>
+        </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VR Experience Features -->
+  <section class="vr-features" id="Virtual">
+    <div class="container">
+      <div class="section-title">
+        <h2 style="color: white;">Virtual Experience Highlights</h2>
+        <p style="color: rgba(255,255,255,0.8)">What makes our spiritual journeys unique</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🛕</div>
+          <h4>360° Temple Tours</h4>
+          <p>Experience sacred temple architecture and spiritual ceremonies in immersive VR</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🕯️</div>
+          <h4>Virtual Rituals</h4>
+          <p>Witness ancient rituals, aartis, and spiritual ceremonies from sacred sites</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎵</div>
+          <h4>Spiritual Music</h4>
+          <p>Experience devotional music, bhajans, and qawwali in authentic spiritual settings</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌅</div>
+          <h4>Sacred Ceremonies</h4>
+          <p>Witness Ganga Aarti, temple ceremonies, and spiritual gatherings in VR</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Spiritual Destinations Wheel -->
+  <section class="container">
+    <div class="wheel-section">
+      <div class="section-title" style="text-align: center; width: 100%; margin-bottom: 40px;">
+        <h2>Interactive Spiritual Wheel</h2>
+        <p>Click on the destinations to explore India's sacred spiritual sites and cultural heritage</p>
+      </div>
+      <div class="wheel-container" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 40px; width: 100%;">
+        <div class="wheel-wrapper" style="margin: 0 auto;">
+          <div class="brown-line"></div>
+          <div class="wheel" id="wheel">
+            <!-- Destinations will be positioned by JavaScript -->
+            <div class="wheel-center">
+             <i class="fas fa-map-marked-alt"></i>
+            </div>
+          </div>
+        </div>
+        
+        <div class="wheel-info-panel" id="wheelInfoPanel">
+          <h2 id="wheelDestinationName">Select a Destination</h2>
+          <p id="wheelDestinationDescription">Click on any destination icon to learn more about these sacred spiritual destinations.</p>
+          <ul class="wheel-features" id="wheelDestinationFeatures">
+            <!-- Features will be populated by JavaScript -->
+          </ul>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="container">
+    <div class="cta-section">
+      <h3>Ready to Experience Spiritual India?</h3>
+      <p>Begin your virtual journey through ancient temples, sacred rituals, and profound cultural traditions</p>
+      <div class="button-group">
+        <a href="https://earth.google.com/web/search/Varanasi+Ganga+Ghats/@25.28934675,83.00746563,79.97195297a,414.60933399d,35y,0h,0t,0r/data=CoMBGlUSTwolMHgzOThlMzFjZjA0NGM4ZDUxOjB4MzU4MmZiNzFkYjEwY2ZjYRn5YSk39kk5QCFOnaJ-csBUQCoUVmFyYW5hc2kgR2FuZ2EgR2hhdHMYAiABIiYKJAn0ryFC6Yw8QBGh8t07XgM8QBnFD49NzjRVQCE0X3WlU-BUQEICCAE6AwoBMEICCABKDQj___________8BEAA">
+        <button class="cta-button">
+          Start Virtual Tour Now <i class="fas fa-vr-cardboard"></i>
+        </button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content" id="Contact">
+      <div class="footer-section">
+        <h3>Incredible India</h3>
+        <p>Creating unforgettable virtual travel experiences that bring the world's wonders to you.</p>
+        <div class="social-links">
+          <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="#Destinations"><i class="fas fa-map-marked-alt"></i> All Destinations</a></li>
+          <li><a href="#Virtual"><i class="fas fa-vr-cardboard"></i> Virtual Tours</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fas fa-envelope"></i> info@incredibleidia.com</a></li>
+          <li><a href="#"><i class="fas fa-phone"></i> +1 (555) 123-4567</a></li>
+          <li><a href="#"><i class="fas fa-map-marker-alt"></i> 123 Travel Street, Adventure City</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+  <h3>Travel Tips</h3>
+  <p>Plan your spiritual journey with these simple and helpful tips.</p>
+  <ul class="footer-links">
+    <li>Best Time for Temple Visits</li>
+    <li>Guidelines for Sacred Places</li>
+    <li>Dress Code & Etiquette</li>
+    <li>Aarti & Darshan Timings</li>
+    <li>How to Stay Safe While Traveling</li>
+  </ul>
+</div>
+
+    </div>
+    
+    <div class="footer-bottom">
+      <p style="color: white;">&copy; 2023 Incredible India. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--light);"></i> for travelers</p>
+    </div>
+  </footer>
+
+  <script>
+    // Create floating background elements
+    function createFloatingElements() {
+      const container = document.getElementById('floatingElements');
+      const colors = ['rgba(139, 69, 19, 0.1)', 'rgba(160, 82, 45, 0.1)', 'rgba(210, 105, 30, 0.1)'];
+      
+      for (let i = 0; i < 15; i++) {
+        const element = document.createElement('div');
+        element.className = 'floating-element';
+        element.style.width = Math.random() * 100 + 50 + 'px';
+        element.style.height = element.style.width;
+        element.style.left = Math.random() * 100 + '%';
+        element.style.background = colors[Math.floor(Math.random() * colors.length)];
+        element.style.animationDuration = (Math.random() * 20 + 10) + 's';
+        element.style.animationDelay = Math.random() * 5 + 's';
+        container.appendChild(element);
+      }
+    }
+
+    // Spiritual Destinations Wheel
+    function initSpiritualWheel() {
+      const destinations = [
+        {
+          id: 'varanasi',
+          name: 'Varanasi - Ganga Ghats',
+          description: 'The spiritual capital of India, known for its sacred Ganga river ghats, ancient temples, spiritual rituals, and the mesmerizing Ganga Aarti ceremony.',
+          features: [
+            'Sacred Ganga Aarti',
+            'Ancient temples',
+            'Spiritual ceremonies',
+            'Boat rides on Ganga'
+          ],
+          icon: 'fas fa-water'
+        },
+        {
+          id: 'rishikesh',
+          name: 'Rishikesh - Lakshman Jhula',
+          description: 'The yoga capital of the world, famous for its suspension bridges, ashrams, spiritual retreats, and adventure activities.',
+          features: [
+            'Yoga and meditation',
+            'Suspension bridges',
+            'Ashrams and retreats',
+            'Adventure activities'
+          ],
+          icon: 'fas fa-spa'
+        },
+        {
+          id: 'haridwar',
+          name: 'Haridwar - Har Ki Pauri',
+          description: 'One of the seven holiest places in Hinduism, known for the Ganga Aarti, Kumbh Mela festival, and ancient temples.',
+          features: [
+            'Ganga Aarti ceremony',
+            'Kumbh Mela site',
+            'Ancient temples',
+            'Spiritual bathing'
+          ],
+          icon: 'fas fa-hands-praying'
+        },
+        {
+          id: 'amritsar',
+          name: 'Amritsar - Golden Temple',
+          description: 'The holiest Gurdwara of Sikhism, known for its stunning golden architecture, community kitchen, and message of spiritual harmony.',
+          features: [
+            'Golden architecture',
+            'Langar (community kitchen)',
+            'Spiritual harmony',
+            'Night ceremony'
+          ],
+          icon: 'fas fa-place-of-worship'
+        },
+        {
+          id: 'mathura',
+          name: 'Mathura - Vrindavan Temples',
+          description: 'The birthplace of Lord Krishna, filled with ancient temples, spiritual significance, and vibrant festivals celebrating Krishna\'s life.',
+          features: [
+            'Krishna Janmashtami',
+            'Ancient temples',
+            'Spiritual festivals',
+            'Hol celebrations'
+          ],
+          icon: 'fas fa-dharmachakra'
+        },
+        {
+          id: 'ajmer',
+          name: 'Ajmer - Dargah Sharif',
+          description: 'One of the most important Sufi shrines in the world, attracting pilgrims of all faiths with its message of love and harmony.',
+          features: [
+            'Sufi shrine',
+            'Interfaith harmony',
+            'Qawwali music',
+            'Spiritual healing'
+          ],
+          icon: 'fas fa-mosque'
+        },
+        {
+          id: 'ujjain',
+          name: 'Ujjain - Mahakaleshwar',
+          description: 'One of the twelve Jyotirlingas, this ancient temple is a major pilgrimage site for Shiva devotees, known for its Bhasma Aarti.',
+          features: [
+            'Jyotirlinga temple',
+            'Bhasma Aarti',
+            'Kumbh Mela site',
+            'Ancient rituals'
+          ],
+          icon: 'fas fa-om'
+        },
+        {
+          id: 'mahabalipuram',
+          name: 'Mahabalipuram - Shore Temple',
+          description: 'A UNESCO World Heritage site with ancient rock-cut temples by the Bay of Bengal, showcasing Pallava architecture.',
+          features: [
+            'UNESCO Heritage site',
+            'Rock-cut architecture',
+            'Coastal temple complex',
+            'Ancient sculptures'
+          ],
+          icon: 'fas fa-monument'
+        }
+      ];
+
+      const wheel = document.getElementById('wheel');
+      const infoPanel = document.getElementById('wheelInfoPanel');
+      const destinationName = document.getElementById('wheelDestinationName');
+      const destinationDescription = document.getElementById('wheelDestinationDescription');
+      const destinationFeatures = document.getElementById('wheelDestinationFeatures');
+      
+      // Calculate positions for destinations around the wheel
+      const radius = 180; // Distance from center
+      const angleStep = (2 * Math.PI) / destinations.length;
+      
+      destinations.forEach((destination, index) => {
+        const angle = index * angleStep;
+        const x = radius * Math.cos(angle);
+        const y = radius * Math.sin(angle);
+        
+        const destinationElement = document.createElement('div');
+        destinationElement.className = 'destination-point';
+        destinationElement.id = destination.id;
+        destinationElement.style.left = `calc(50% + ${x}px)`;
+        destinationElement.style.top = `calc(50% + ${y}px)`;
+        destinationElement.style.transform = `translate(-50%, -50%)`;
+        
+        const icon = document.createElement('i');
+        icon.className = destination.icon;
+        destinationElement.appendChild(icon);
+        
+        destinationElement.addEventListener('click', () => {
+          // Remove active class from all destinations
+          document.querySelectorAll('.destination-point').forEach(el => {
+            el.classList.remove('active');
+          });
+          
+          // Add active class to clicked destination
+          destinationElement.classList.add('active');
+          
+          // Update info panel
+          destinationName.textContent = destination.name;
+          destinationDescription.textContent = destination.description;
+          
+          // Update features list
+          destinationFeatures.innerHTML = '';
+          destination.features.forEach(feature => {
+            const li = document.createElement('li');
+            li.textContent = feature;
+            destinationFeatures.appendChild(li);
+          });
+          
+          // Show info panel with animation
+          infoPanel.classList.add('active');
+        });
+        
+        wheel.appendChild(destinationElement);
+      });
+      
+      // Add click event for virtual tour button
+      document.querySelector('.virtual-tour-btn').addEventListener('click', () => {
+        alert('Starting virtual tour of Spiritual India! This feature would connect to a 360° tour experience.');
+      });
+      
+      // Add click event for explore button
+      document.querySelector('.wheel-explore-btn').addEventListener('click', () => {
+        const activeDestination = document.querySelector('.destination-point.active');
+        if (activeDestination) {
+          alert(`Exploring ${activeDestination.id}! This would navigate to a detailed page about this destination.`);
+        } else {
+          alert('Please select a destination first!');
+        }
+      });
+    }
+
+    // Back to Top Functionality
+    function initBackToTop() {
+      const backToTopBtn = document.getElementById('backToTop');
+      
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+          backToTopBtn.classList.add('active');
+        } else {
+          backToTopBtn.classList.remove('active');
+        }
+      });
+      
+      backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+
+    // Add scroll animations
+    function initScrollAnimations() {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+      
+      // Observe elements for animation
+      const elementsToAnimate = document.querySelectorAll('.destination-card, .feature-card, .gallery-item');
+      elementsToAnimate.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        observer.observe(el);
+      });
+    }
+
+    // Initialize everything when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      createFloatingElements();
+      initSpiritualWheel();
+      initBackToTop();
+      initScrollAnimations();
+      
+      // Add click handlers for CTA buttons
+      const ctaButtons = document.querySelectorAll('.cta-button, .explore-btn');
+      ctaButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Add a ripple effect
+          const ripple = document.createElement('span');
+          const rect = this.getBoundingClientRect();
+          const size = Math.max(rect.width, rect.height);
+          const x = event.clientX - rect.left - size/2;
+          const y = event.clientY - rect.top - size/2;
+          
+          ripple.style.width = ripple.style.height = size + 'px';
+          ripple.style.left = x + 'px';
+          ripple.style.top = y + 'px';
+          ripple.classList.add('ripple');
+          
+          this.appendChild(ripple);
+          
+          setTimeout(() => {
+            ripple.remove();
+          }, 600);
+          
+          // In a real app, this would start the VR experience
+          if (this.classList.contains('cta-button')) {
+            alert('Starting your virtual spiritual journey! This would launch the VR experience in a real application.');
+          }
+        });
+      });
+      
+      // Add CSS for ripple effect
+      const style = document.createElement('style');
+      style.textContent = `
+        .ripple {
+          position: absolute;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.6);
+          transform: scale(0);
+          animation: ripple-animation 0.6s linear;
+        }
+        
+        @keyframes ripple-animation {
+          to {
+            transform: scale(4);
+            opacity: 0;
+          }
+        }
+        
+        button {
+          position: relative;
+          overflow: hidden;
+        }
+      `;
+      document.head.appendChild(style);
+    });
+  </script>
+</body>
+</html>
